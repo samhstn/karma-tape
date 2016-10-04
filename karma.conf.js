@@ -1,13 +1,13 @@
 module.exports = function (config) {
   config.set({
     plugins: [
-      require('karma-tap'),
-      require('karma-chrome-launcher'),
-      require('karma-browserify'),
-      require('karma-tap-pretty-reporter'),
-      require('karma-html2js-preprocessor'),
-      require('karma-fixture'),
-      require('karma-coverage')
+      'karma-tap',
+      'karma-chrome-launcher',
+      'karma-browserify',
+      'karma-tap-pretty-reporter',
+      'karma-html2js-preprocessor',
+      'karma-fixture',
+      'karma-coverage'
     ],
     basePath: '',
     frameworks: [
