@@ -1,5 +1,12 @@
 module.exports = function (config) {
+  console.log('TRAVIS?: ', process.env.TRAVIS);
   config.set({
+    customLaunchers: {  
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
     plugins: [
       'karma-tap',
       'karma-chrome-launcher',
@@ -31,7 +38,7 @@ module.exports = function (config) {
       'public/*.html'
     ],
     port: 9876,
-    browsers: ['Chrome'],
+    browsers: process.env.TRAVIS ? ['Chrome_travis_ci'] : ['Chrome'],
     singleRun: true
   });
 };
