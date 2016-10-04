@@ -6,7 +6,8 @@ module.exports = function (config) {
       require('karma-browserify'),
       require('karma-tap-pretty-reporter'),
       require('karma-html2js-preprocessor'),
-      require('karma-fixture')
+      require('karma-fixture'),
+      require('karma-coverage')
     ],
     basePath: '',
     frameworks: [
@@ -15,13 +16,14 @@ module.exports = function (config) {
       'fixture'
     ],
     reporters: [
-      'tap-pretty'
+      'tap-pretty',
+      'coverage'
     ],
     tapReporter: {
       prettifier: 'tap-spec'
     },
     preprocessors: {
-      'test/**/*.js': ['browserify'],
+      'test/**/*.js': ['browserify', 'coverage'],
       'public/*.html': ['html2js']
     },
     files: [
