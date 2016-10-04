@@ -1,5 +1,4 @@
 module.exports = function (config) {
-  console.log('TRAVIS?: ', process.env.TRAVIS);
   config.set({
     customLaunchers: {  
       Chrome_travis_ci: {
