@@ -1,12 +1,19 @@
 module.exports = function (config) {
   config.set({
+    customLaunchers: {  
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
     plugins: [
-      require('karma-tap'),
-      require('karma-chrome-launcher'),
-      require('karma-browserify'),
-      require('karma-tap-pretty-reporter'),
-      require('karma-html2js-preprocessor'),
-      require('karma-fixture')
+      'karma-tap',
+      'karma-chrome-launcher',
+      'karma-browserify',
+      'karma-tap-pretty-reporter',
+      'karma-html2js-preprocessor',
+      'karma-fixture',
+      'karma-coverage'
     ],
     basePath: '',
     frameworks: [
@@ -15,13 +22,14 @@ module.exports = function (config) {
       'fixture'
     ],
     reporters: [
-      'tap-pretty'
+      'tap-pretty',
+      'coverage'
     ],
     tapReporter: {
       prettifier: 'tap-spec'
     },
     preprocessors: {
-      'test/**/*.js': ['browserify'],
+      'test/**/*.js': ['browserify', 'coverage'],
       'public/*.html': ['html2js']
     },
     files: [
@@ -29,7 +37,7 @@ module.exports = function (config) {
       'public/*.html'
     ],
     port: 9876,
-    browsers: ['Chrome'],
+    browsers: process.env.TRAVIS ? ['Chrome_travis_ci'] : ['Chrome'],
     singleRun: true
   });
 };
