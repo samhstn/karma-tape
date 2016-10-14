@@ -2,7 +2,7 @@
 [![codecov](https://codecov.io/gh/shouston3/karma-tape/branch/master/graph/badge.svg)](https://codecov.io/gh/shouston3/karma-tape)
 # Karma Tape
 
-NOTE: I cannot get it to include javascript files, resorting back to jasmine and chai from tape
+NOTE: I cannot get it to include javascript files, resorting back to jasmine and chai and away from tape
 
 An example can be found here: https://github.com/shouston3/karma-tested-counter
 
