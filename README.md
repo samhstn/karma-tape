@@ -4,7 +4,7 @@
 
 **NOTE**: I cannot get it to include javascript files, resorting back to jasmine and chai and away from tape
 
-An example can be found here: https://github.com/shouston3/karma-tested-counter
+An example of this can be found here: https://github.com/shouston3/karma-tested-counter
 
 If you get it working, Let me know via gitter: [![gitter badge](https://img.shields.io/badge/gitter-shouston3-brightgreen.svg)](https://gitter.im/shouston3)
 
